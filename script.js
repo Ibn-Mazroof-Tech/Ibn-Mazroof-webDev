@@ -210,18 +210,17 @@ if (form) {
     };
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycby_-8cWdmpiL9JHHnPkhK-0HJzxtEIa-BFef5Rza8XinsRAigI6FzjPNXsONgTHX6ob/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      form.reset();
-      showToast('Message sent successfully 🚀');
-
-    } catch (error) {
-      showToast('Something went wrong ❌');
-    }
+  await fetch('https://script.google.com/macros/s/AKfycby_-8cWdmpiL9JHHnPkhK-0HJzxtEIa-BFef5Rza8XinsRAigI6FzjPNXsONgTHX6ob/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
   });
+
+  showToast("Message sent successfully 🚀", true);
+  contactForm.reset();
+} catch (error) {
+  showToast("Something went wrong ❌", false);
 }
+
 
