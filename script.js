@@ -182,39 +182,45 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // google sheets form integration 
-const form = $('#contact-form');
-  const toast = $('#toast');
-  const showToast = (message) => {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.remove('translate-x-[120%]');
-    toast.classList.add('translate-x-0');
-    setTimeout(() => {
-      toast.classList.remove('translate-x-0');
-      toast.classList.add('translate-x-[120%]');
-    }, 3000);
-  };
+const form = document.getElementById('contact-form');
+const toast = document.getElementById('toast');
 
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const payload = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-      };
+function showToast(message) {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.remove('translate-x-[120%]');
+  toast.classList.add('translate-x-0');
 
-      try {
-        await fetch('https://script.google.com/macros/s/AKfycbwEW9vGdd5FokZBCZ5Qs-aSQRkANcjU12_NzvVZ2eFs69sgSgrYb8CvkWeBf9geGZQo/exec', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        form.reset();
-        showToast('Message sent successfully 🚀');
-      } catch (error) {
-        showToast('Something went wrong ❌');
-      }
-    });
-  }
+  setTimeout(() => {
+    toast.classList.remove('translate-x-0');
+    toast.classList.add('translate-x-[120%]');
+  }, 3000);
+}
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbwEW9vGdd5FokZBCZ5Qs-aSQRkANcjU12_NzvVZ2eFs69sgSgrYb8CvkWeBf9geGZQo/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      form.reset();
+      showToast('Message sent successfully 🚀');
+
+    } catch (error) {
+      showToast('Something went wrong ❌');
+    }
+  });
+}
