@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mujtaba | Developer Portfolio</title>
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,13 +13,21 @@
       rel="stylesheet"
     />
 
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: { inter: ['Inter', 'sans-serif'] },
-            colors: { slateDeep: '#0f172a' }
+            fontFamily: {
+              inter: ['Inter', 'sans-serif']
+            },
+            colors: {
+              slateDeep: '#0f172a'
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(56, 189, 248, 0.35), 0 0 30px rgba(99, 102, 241, 0.2)'
+            }
           }
         }
       };
@@ -26,63 +35,96 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="font-inter bg-slateDeep text-white antialiased">
-    <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#home" class="text-lg font-semibold tracking-wide">Mujtaba.dev</a>
+  <body class="font-inter bg-slateDeep text-white antialiased selection:bg-cyan-400/20 selection:text-cyan-200">
+   <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
 
-        <ul class="hidden items-center gap-6 text-sm text-slate-300 md:flex">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#packages" class="nav-link">Web Dev</a></li>
-          <li><a href="#ads-services" class="nav-link">Ads</a></li>
-          <li><a href="#combo-packages" class="nav-link">Combo</a></li>
-          <li><a href="#add-ons" class="nav-link">Add-Ons</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
-        <button id="menu-btn" class="flex flex-col gap-1 md:hidden" aria-label="Open menu" aria-expanded="false">
-          <span class="bar h-0.5 w-6 bg-white transition-all"></span>
-          <span class="bar h-0.5 w-6 bg-white transition-all"></span>
-          <span class="bar h-0.5 w-6 bg-white transition-all"></span>
-        </button>
-      </nav>
+    <!-- Logo -->
+    <a href="#home" class="text-lg font-semibold tracking-wide text-white">
+      Mujtaba.dev
+    </a>
 
-      <div id="mobile-menu" class="max-h-0 overflow-hidden bg-[#0f172a]/95 transition-all duration-500 md:hidden">
-        <ul class="flex flex-col space-y-4 px-6 py-6 text-slate-300">
-          <li><a href="#home" class="nav-link block">Home</a></li>
-          <li><a href="#services" class="nav-link block">Services</a></li>
-          <li><a href="#projects" class="nav-link block">Projects</a></li>
-          <li><a href="#packages" class="nav-link block">Web Dev</a></li>
-          <li><a href="#ads-services" class="nav-link block">Ads</a></li>
-          <li><a href="#combo-packages" class="nav-link block">Combo</a></li>
-          <li><a href="#add-ons" class="nav-link block">Add-Ons</a></li>
-          <li><a href="#contact" class="nav-link block">Contact</a></li>
-        </ul>
-      </div>
-    </header>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6 text-gray-300">
+
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#packages" class="nav-link">Web Dev</a></li>
+      <li><a href="#ads-services" class="nav-link">Ads</a></li>
+      <li><a href="#combo-packages" class="nav-link">Combo</a></li>
+      <li><a href="#add-ons" class="nav-link">Add-Ons</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+
+    </ul>
+
+    <!-- Hamburger Button -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1">
+      <span class="bar w-6 h-0.5 bg-white transition-all"></span>
+      <span class="bar w-6 h-0.5 bg-white transition-all"></span>
+      <span class="bar w-6 h-0.5 bg-white transition-all"></span>
+    </button>
+
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu"
+       class="max-h-0 overflow-hidden transition-all duration-500 md:hidden bg-[#0f172a]/95 backdrop-blur-md">
+
+    <ul class="flex flex-col space-y-4 px-6 py-6 text-gray-300">
+
+      <li><a href="#home" class="nav-link block">Home</a></li>
+      <li><a href="#services" class="nav-link block">Services</a></li>
+      <li><a href="#projects" class="nav-link block">Projects</a></li>
+      <li><a href="#packages" class="nav-link block">Web Dev</a></li>
+      <li><a href="#ads-services" class="nav-link block">Ads</a></li>
+      <li><a href="#combo-packages" class="nav-link block">Combo</a></li>
+      <li><a href="#add-ons" class="nav-link block">Add-Ons</a></li>
+      <li><a href="#contact" class="nav-link block">Contact</a></li>
+
+    </ul>
+  </div>
+
+</header>
 
     <main>
-      <section id="home" class="hero-bg relative isolate min-h-screen overflow-hidden px-6 pb-16 pt-28 lg:px-8 lg:pt-32">
-        <div id="cursor-glow" class="pointer-events-none absolute h-72 w-72 rounded-full opacity-0 blur-3xl"></div>
+      <section
+        id="hero"
+        class="hero-bg relative isolate min-h-screen overflow-hidden px-6 pb-16 pt-28 lg:px-8 lg:pt-32"
+      >
+        <div id="cursor-glow" class="pointer-events-none absolute -z-10 h-72 w-72 rounded-full opacity-0 blur-3xl"></div>
 
-        <div class="relative z-10 mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1fr,1.2fr]">
-          <div class="reveal flex justify-center lg:justify-start" data-parallax="0.08">
+        <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1fr,1.2fr]">
+          <div class="reveal hero-parallax-image flex justify-center lg:justify-start" data-parallax="0.08">
             <div class="profile-glow rounded-full p-1">
-              <div class="h-52 w-52 overflow-hidden rounded-full border-4 border-cyan-500/70 sm:h-60 sm:w-60">
-                <video src="videoself.mp4" poster="photo.jpeg" autoplay muted loop playsinline class="h-full w-full object-cover"></video>
-              </div>
+              <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-500 shadow-lg shadow-cyan-500/30">
+  <video 
+  src="videoself.mp4"
+  poster="photo.jpeg"
+  autoplay
+  muted
+  loop
+  playsinline
+  class="w-full h-full object-cover">
+</video>
+</div>
             </div>
           </div>
 
-          <div class="reveal text-center lg:text-left" data-parallax="0.13">
+          <div class="reveal hero-parallax-text text-center lg:text-left" data-parallax="0.13">
             <p class="mb-4 text-sm uppercase tracking-[0.2em] text-cyan-300">Freelance Web Developer</p>
-            <h1 class="text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">Hi, I'm Mujtaba</h1>
-            <div class="mt-5 h-8 text-lg text-slate-200 sm:text-xl"><span id="typed-text"></span><span class="typing-cursor">|</span></div>
-            <p class="mx-auto mt-6 max-w-xl text-slate-400 lg:mx-0">
-              I craft high-performing, conversion-focused websites for modern businesses that want premium digital presence and measurable growth.
+            <h1 class="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Hi, I'm Mujtaba</h1>
+
+            <div class="mt-5 h-8 text-lg text-slate-200 sm:text-xl" aria-live="polite">
+              <span id="typed-text"></span><span class="typing-cursor">|</span>
+            </div>
+
+            <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 lg:mx-0">
+              I craft high-performing, conversion-focused websites for modern businesses that want premium
+              digital presence and measurable growth.
             </p>
+
             <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a href="#projects" class="cta-btn cta-primary w-full sm:w-auto">View My Work</a>
               <a href="#contact" class="cta-btn cta-secondary w-full sm:w-auto">Hire Me</a>
@@ -92,59 +134,669 @@
       </section>
 
       <section id="services" class="reveal mx-auto max-w-6xl px-6 py-20 lg:px-8">
-        <div class="mb-12"><p class="text-sm uppercase tracking-[0.18em] text-cyan-300">Services</p><h2 class="mt-3 text-3xl font-bold sm:text-4xl">What I Build</h2></div>
+        <div class="mb-12">
+          <p class="text-sm uppercase tracking-[0.18em] text-cyan-300">Services</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">What I Build</h2>
+        </div>
+
         <div class="grid gap-6 sm:grid-cols-2">
-          <article class="service-card"><h3 class="text-xl font-semibold">Business Websites</h3><p class="mt-2 text-slate-400">Professional websites that build trust and convert visitors into customers.</p></article>
-          <article class="service-card"><h3 class="text-xl font-semibold">Landing Pages</h3><p class="mt-2 text-slate-400">Focused, high-speed pages designed to generate leads and drive specific actions.</p></article>
-          <article class="service-card"><h3 class="text-xl font-semibold">Website Redesign</h3><p class="mt-2 text-slate-400">Transform outdated websites into modern, responsive experiences.</p></article>
-          <article class="service-card"><h3 class="text-xl font-semibold">Website Maintenance</h3><p class="mt-2 text-slate-400">Reliable updates, performance monitoring, and security improvements.</p></article>
-        </div>
-      </section>
-
-      <section id="projects" class="reveal py-24">
-        <div class="mx-auto max-w-6xl px-6">
-          <div class="mb-16 text-center"><h2 class="text-4xl font-bold">My Projects</h2></div>
-          <div class="grid gap-8 md:grid-cols-3">
-            <article class="project-card"><img src="SOQA.jpeg" alt="Sayyed Online Quran Academy" /><div class="project-overlay"><a href="https://sayyedonlinequraanacademy.com/" target="_blank" rel="noopener">View Project</a></div></article>
-            <article class="project-card"><img src="AHInteriors2.jpeg" alt="Interior design demo" /><div class="project-overlay"><a href="https://ah-interiors.vercel.app/" target="_blank" rel="noopener">View Demo</a></div></article>
-            <article class="project-card"><div class="flex h-full min-h-[16rem] items-center justify-center bg-slate-800 text-cyan-300">YOUR BUSINESS HERE</div><div class="project-overlay"><a href="#packages">Start Your Project</a></div></article>
-          </div>
-        </div>
-      </section>
-
-      <section id="packages" class="reveal mx-auto max-w-7xl px-6 py-20"><h2 class="mb-10 text-center text-4xl font-bold">Website Development Packages</h2></section>
-      <section id="ads-services" class="reveal mx-auto max-w-6xl px-6 py-20"><h2 class="text-center text-4xl font-bold">Ads Services</h2></section>
-      <section id="combo-packages" class="reveal mx-auto max-w-5xl px-6 py-24"><h2 class="text-center text-4xl font-bold">Business Boost Combo</h2></section>
-      <section id="add-ons" class="reveal mx-auto max-w-6xl px-6 py-24"><h2 class="text-center text-4xl font-bold">Optional Add-On Services</h2></section>
-
-      <section id="contact" class="reveal px-6 py-24">
-        <div class="mx-auto w-full max-w-5xl perspective">
-          <div id="contact-card" class="contact-card">
-            <div class="contact-side contact-front flex flex-col items-center justify-center rounded-3xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 p-10 text-center">
-              <h2 class="mb-6 text-4xl font-bold">Ready to Start?</h2>
-              <button id="flip-btn" class="rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-3">Contact Me</button>
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M4 5h16v14H4z" />
+                <path d="M4 9h16" />
+              </svg>
             </div>
-            <div class="contact-side contact-back rounded-3xl bg-slate-800 p-10">
-              <button id="flip-back-btn" class="mb-6 text-cyan-300">← Back</button>
-              <form id="contact-form" class="space-y-4">
-                <input name="name" type="text" required placeholder="Your Name" class="w-full rounded-lg border border-slate-600 bg-slate-900 p-3" />
-                <input name="email" type="email" required placeholder="Your Email" class="w-full rounded-lg border border-slate-600 bg-slate-900 p-3" />
-                <textarea name="message" rows="4" required placeholder="Your Message" class="w-full rounded-lg border border-slate-600 bg-slate-900 p-3"></textarea>
-                <button type="submit" class="w-full rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 py-3">Send Message</button>
-              </form>
+            <h3 class="mt-4 text-xl font-semibold">Business Websites</h3>
+            <p class="mt-2 text-slate-400">Professional websites that build trust and convert visitors into customers.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M12 3v18" />
+                <path d="M3 12h18" />
+              </svg>
             </div>
-          </div>
+            <h3 class="mt-4 text-xl font-semibold">Landing Pages</h3>
+            <p class="mt-2 text-slate-400">Focused, high-speed pages designed to generate leads and drive specific actions.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M4 20l8-8 4 4 4-4" />
+                <path d="M4 4h16v16H4z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Website Redesign</h3>
+            <p class="mt-2 text-slate-400">Transform outdated websites into modern, responsive experiences with premium aesthetics.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M12 6v6l4 2" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Website Maintenance</h3>
+            <p class="mt-2 text-slate-400">Reliable updates, performance monitoring, and security improvements month after month.</p>
+          </article>
         </div>
       </section>
+
+      <!-- PROJECTS SECTION -->
+<section id="projects" class="py-24 bg-[#0f172a] text-white">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">My Projects</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        A glimpse of websites I’ve built and designed for real businesses.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- PROJECT 1 - SAYYED ONLINE QURAN ACADEMY -->
+      <div class="relative group rounded-2xl overflow-hidden border border-gray-700">
+
+        <img src="SOQA.jpeg" 
+             alt="Sayyed Online Quran Academy Website"
+             class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/70 opacity-0 
+                    group-hover:opacity-100 transition duration-500 
+                    flex flex-col items-center justify-center text-center p-6">
+
+          <h3 class="text-xl font-semibold mb-2">
+            Sayyed Online Quran Academy
+          </h3>
+
+          <p class="text-gray-300 text-sm mb-4">
+            Educational website with course details, contact forms & modern UI.
+          </p>
+
+          <a href="https://sayyedonlinequraanacademy.com/" target="_blank"
+             class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                    transition duration-300 hover:scale-105">
+            View Project
+          </a>
+
+        </div>
+      </div>
+
+
+
+      <!-- PROJECT 2 - INTERIOR DESIGN DEMO -->
+      <div class="relative group rounded-2xl overflow-hidden border border-gray-700">
+
+        <img src="AHInteriors2.jpeg" 
+             alt="Interior Designing Website Demo"
+             class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/70 opacity-0 
+                    group-hover:opacity-100 transition duration-500 
+                    flex flex-col items-center justify-center text-center p-6">
+
+          <h3 class="text-xl font-semibold mb-2">
+            Interior Designing Demo
+          </h3>
+
+          <p class="text-gray-300 text-sm mb-4">
+            Modern business website demo for interior & home styling services.
+          </p>
+
+          <a href="https://ah-interiors.vercel.app/" target="_blank"
+             class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                    transition duration-300 hover:scale-105">
+            View Demo
+          </a>
+
+        </div>
+      </div>
+
+
+
+      <!-- PROJECT 3 - YOURS -->
+      <div class="relative group rounded-2xl overflow-hidden border border-dashed border-cyan-500">
+
+        <div class="w-full h-64 bg-[#1e293b] flex items-center justify-center 
+                    transition duration-500 group-hover:scale-105">
+
+          <span class="text-2xl font-bold text-cyan-400">
+            YOUR BUSINESS HERE
+          </span>
+        </div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/70 opacity-0 
+                    group-hover:opacity-100 transition duration-500 
+                    flex flex-col items-center justify-center text-center p-6">
+
+          <h3 class="text-xl font-semibold mb-2">
+            Your Website Could Be Here
+          </h3>
+
+          <p class="text-gray-300 text-sm mb-4">
+            Let’s build something amazing for your business.
+          </p>
+
+          <a href="#packages"
+             class="px-6 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                    transition duration-300 hover:scale-105">
+            Start Your Project
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      <!-- WEBSITE DEVELOPMENT PACKAGES SECTION -->
+<section id="packages" class="py-20 bg-[#0f172a] text-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">
+        Website Development Packages
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Choose the perfect website package to establish and grow your business online.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- ZERO PACKAGE -->
+      <div class="bg-[#1e293b]/60 backdrop-blur-lg p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cyan-500/20">
+
+        <h3 class="text-xl font-semibold mb-2">Zero Package</h3>
+        <p class="text-gray-400 mb-4 text-sm">Starter Presence</p>
+
+        <div class="text-3xl font-bold mb-6">₹2,999</div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ 1 Page Website</li>
+          <li>✔ Business Intro</li>
+          <li>✔ WhatsApp Integration</li>
+          <li>✔ Google Maps</li>
+          <li>✔ Mobile Responsive</li>
+          <li>✔ 15 Days Support</li>
+        </ul>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/40">
+          Get Started
+        </button></a>
+      </div>
+
+      <!-- STARTER PACKAGE -->
+      <div class="bg-[#1e293b]/60 backdrop-blur-lg p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20">
+
+        <h3 class="text-xl font-semibold mb-2">Starter Website</h3>
+        <p class="text-gray-400 mb-4 text-sm">For Small Businesses</p>
+
+        <div class="text-3xl font-bold mb-6">₹5,999</div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ 3 Pages</li>
+          <li>✔ Contact Form</li>
+          <li>✔ WhatsApp + Maps</li>
+          <li>✔ Basic SEO</li>
+          <li>✔ Responsive Design</li>
+          <li>✔ 1 Month Support</li>
+        </ul>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-400/40">
+          Choose Plan
+        </button></a>
+      </div>
+
+      <!-- GROWTH PACKAGE (MOST POPULAR) -->
+      <div class="relative bg-[#1e293b]/80 backdrop-blur-lg p-8 rounded-2xl border-2 border-cyan-500 
+                  transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-cyan-500/30 scale-105">
+
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black px-4 py-1 text-xs font-semibold rounded-full">
+          MOST POPULAR
+        </span>
+
+        <h3 class="text-xl font-semibold mb-2">Growth Website</h3>
+        <p class="text-gray-400 mb-4 text-sm">Best Value</p>
+
+        <div class="text-3xl font-bold mb-6">₹12,999</div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ 5–7 Pages</li>
+          <li>✔ Premium Design</li>
+          <li>✔ Animations</li>
+          <li>✔ Lead Capture Form</li>
+          <li>✔ SEO Optimization</li>
+          <li>✔ 2 Months Support</li>
+        </ul>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/50">
+          Get This Plan
+        </button></a>
+      </div>
+
+      <!-- PREMIUM PACKAGE -->
+      <div class="bg-[#1e293b]/60 backdrop-blur-lg p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-purple-500/20">
+
+        <h3 class="text-xl font-semibold mb-2">Premium Website</h3>
+        <p class="text-gray-400 mb-4 text-sm">Advanced Business Presence</p>
+
+        <div class="text-3xl font-bold mb-6">₹19,999+</div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ 8–10 Pages</li>
+          <li>✔ Custom UI Design</li>
+          <li>✔ Advanced Animations</li>
+          <li>✔ Blog & Testimonials</li>
+          <li>✔ Analytics Setup</li>
+          <li>✔ 3 Months Maintenance</li>
+        </ul>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-400/40">
+          Contact Now
+        </button></a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ADS SERVICES SECTION -->
+<section id="ads-services" class="py-20 bg-[#0f172a] text-white">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">
+        Ads Services
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Generate real leads and customers using strategic Google & Meta advertising.
+      </p>
+    </div>
+
+    <!-- Ads Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- ADS SETUP -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20">
+
+        <h3 class="text-xl font-semibold mb-2">Ads Setup</h3>
+        <p class="text-gray-400 text-sm mb-4">One-Time Configuration</p>
+
+        <div class="text-3xl font-bold mb-6">₹3,999</div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ Google Ads Setup</li>
+          <li>✔ Meta Ads Setup</li>
+          <li>✔ Pixel & Tracking Setup</li>
+          <li>✔ 1 Campaign Creation</li>
+          <li>✔ Basic Audience Targeting</li>
+        </ul>
+
+        <p class="text-xs text-gray-500 mt-4">
+          *Ad budget not included.
+        </p>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/40">
+          Get Started
+        </button></a>
+      </div>
+
+
+      <!-- BASIC ADS MANAGEMENT -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20">
+
+        <h3 class="text-xl font-semibold mb-2">Basic Ads Management</h3>
+        <p class="text-gray-400 text-sm mb-4">Monthly Optimization</p>
+
+        <div class="text-3xl font-bold mb-6">₹4,000<span class="text-sm text-gray-400">/month</span></div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ Campaign Monitoring</li>
+          <li>✔ Budget Optimization</li>
+          <li>✔ Audience Testing</li>
+          <li>✔ Weekly Performance Check</li>
+          <li>✔ Monthly Report</li>
+          <li>✔ 1 Basic Promotional Post Included</li>
+        </ul>
+
+        <p class="text-xs text-gray-500 mt-4">
+          Client provides ad creatives.
+        </p>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-400/40">
+          Choose Plan
+        </button></a>
+      </div>
+
+
+      <!-- ADVANCED ADS MANAGEMENT -->
+      <div class="relative bg-[#1e293b] p-8 rounded-2xl border-2 border-cyan-500 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/30">
+
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-500 text-black px-4 py-1 text-xs font-semibold rounded-full">
+          BEST FOR GROWTH
+        </span>
+
+        <h3 class="text-xl font-semibold mb-2">Advanced Ads Management</h3>
+        <p class="text-gray-400 text-sm mb-4">Full Creative + Strategy</p>
+
+        <div class="text-3xl font-bold mb-6">₹9,000<span class="text-sm text-gray-400">/month</span></div>
+
+        <ul class="space-y-3 text-gray-300 text-sm">
+          <li>✔ Everything in Basic</li>
+          <li>✔ 2–4 Reel Creation / Month</li>
+          <li>✔ Post Design</li>
+          <li>✔ Ad Copywriting</li>
+          <li>✔ Strategy Planning</li>
+          <li>✔ Detailed Performance Report</li>
+        </ul>
+
+        <a href="#contact"><button class="mt-8 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                       transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/50">
+          Start Growing
+        </button></a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- BUSINESS BOOST COMBO SECTION -->
+<section id="combo-packages" class="py-24 bg-[#0f172a] text-white">
+
+  <div class="max-w-5xl mx-auto px-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">
+        Business Boost Combo
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Complete digital solution to build your online presence and generate real customers.
+      </p>
+    </div>
+
+    <!-- Combo Card -->
+    <div class="relative bg-gradient-to-r from-cyan-500/10 to-purple-500/10 
+                border border-cyan-500/30 rounded-3xl p-10 
+                transition duration-300 hover:shadow-2xl hover:shadow-cyan-500/20">
+
+      <!-- Highlight Badge -->
+      <span class="absolute -top-4 left-1/2 -translate-x-1/2 
+                   bg-cyan-500 text-black px-5 py-1 text-xs font-semibold rounded-full">
+        BEST VALUE PACKAGE
+      </span>
+
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+
+        <!-- Left Side Content -->
+        <div>
+
+          <h3 class="text-2xl font-semibold mb-6">
+            Growth Website + Ads Management
+          </h3>
+
+          <ul class="space-y-4 text-gray-300 text-sm">
+            <li>✔ 5–7 Page Premium Website</li>
+            <li>✔ Lead Capture Forms</li>
+            <li>✔ Google + Meta Ads Setup</li>
+            <li>✔ 1 Month Ads Management</li>
+            <li>✔ Landing Page for Campaign</li>
+            <li>✔ Basic Creative Support</li>
+            <li>✔ Analytics Integration</li>
+            <li>✔ Performance Report</li>
+          </ul>
+
+        </div>
+
+        <!-- Right Side Pricing -->
+        <div class="text-center md:text-right">
+
+          <p class="text-gray-400 mb-2">Starting From</p>
+
+          <div class="text-4xl font-bold mb-6">
+            ₹19,999
+          </div>
+
+          <p class="text-sm text-gray-400 mb-6">
+            Includes Website + 1 Month Ads Management  
+            <br>
+            *Ad budget not included.
+          </p>
+
+          <a href="#contact"><button class="px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 
+                         transition duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/40">
+            Boost My Business
+          </button></a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD-ON SERVICES SECTION -->
+<section id="add-ons" class="py-24 bg-[#0f172a] text-white">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">
+        Optional Add-On Services
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Enhance your website or marketing performance with additional professional services.
+      </p>
+    </div>
+
+    <!-- Add-On Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Extra Page -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20">
+
+        <h3 class="text-lg font-semibold mb-3">Extra Page</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Add additional service pages, gallery, or custom sections.
+        </p>
+        <div class="text-xl font-bold">₹1,000 / page</div>
+      </div>
+
+      <!-- Reel Editing -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20">
+
+        <h3 class="text-lg font-semibold mb-3">Reel Editing</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Professional editing for Instagram & Facebook promotional reels.
+        </p>
+        <div class="text-xl font-bold">₹600+</div>
+      </div>
+
+      <!-- Static Post Design -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/20">
+
+        <h3 class="text-lg font-semibold mb-3">Promotional Post Design</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Clean and attractive social media promotional graphics.
+        </p>
+        <div class="text-xl font-bold">₹400 – ₹1,200</div>
+      </div>
+
+      <!-- Landing Page -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/20">
+
+        <h3 class="text-lg font-semibold mb-3">Ad Landing Page</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          High-converting landing page for Google or Meta ad campaigns.
+        </p>
+        <div class="text-xl font-bold">₹2,500+</div>
+      </div>
+
+      <!-- Speed Optimization -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20">
+
+        <h3 class="text-lg font-semibold mb-3">Speed Optimization</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Improve website loading speed for better user experience.
+        </p>
+        <div class="text-xl font-bold">₹1,500</div>
+      </div>
+
+      <!-- Monthly Maintenance -->
+      <div class="bg-[#1e293b] p-8 rounded-2xl border border-gray-700 
+                  transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/20">
+
+        <h3 class="text-lg font-semibold mb-3">Monthly Maintenance</h3>
+        <p class="text-gray-400 text-sm mb-4">
+          Regular updates, small changes, and technical support.
+        </p>
+        <div class="text-xl font-bold">₹999 – ₹2,999 / month</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="py-24 bg-[#0f172a] text-white flex justify-center">
+
+  <div class="perspective w-full max-w-5xl">
+
+    <div id="contact-card" class="contact-card">
+
+      <!-- FRONT -->
+      <div class="contact-side contact-front bg-gradient-to-r from-cyan-500/20 to-blue-500/20 flex flex-col items-center justify-center text-center p-10">
+
+        <h2 class="text-4xl font-bold mb-6">Ready to Start?</h2>
+        <p class="text-gray-300 mb-8 max-w-md">
+          Let’s discuss your project and build something powerful.
+        </p>
+
+        <button id="flip-btn"
+          class="px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:scale-105 transition">
+          Contact Me
+        </button>
+
+      </div>
+
+      <!-- BACK -->
+      <div class="contact-side contact-back bg-[#1e293b] p-10">
+
+        <div class="grid md:grid-cols-2 gap-10 h-full items-center">
+
+          <!-- LEFT -->
+          <div>
+            <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+
+            <p class="text-gray-400 mb-6">
+              I usually respond within 2–4 hours.
+            </p>
+
+            <div class="space-y-4 text-gray-300">
+
+              <p>📧 
+                <a href="mailto:mujtaba.ibn.mazroof@gmail.com" class="hover:text-cyan-400">
+                  mujtaba.ibn.mazroof@gmail.com
+                </a>
+              </p>
+
+              <p>💬 
+                <a href="https://wa.me/918376063718?text=Hi%20Mujtaba"
+                   target="_blank"
+                   class="hover:text-cyan-400">
+                  Message on WhatsApp
+                </a>
+              </p>
+
+            </div>
+          </div>
+
+          <!-- RIGHT FORM -->
+          <form id="contact-form" class="space-y-4">
+
+  <input type="text" name="name" placeholder="Your Name"
+    class="w-full p-3 rounded-lg bg-[#0f172a] border border-gray-700">
+
+  <input type="email" name="email" placeholder="Your Email"
+    class="w-full p-3 rounded-lg bg-[#0f172a] border border-gray-700">
+
+  <textarea name="message" rows="4" placeholder="Your Message"
+    class="w-full p-3 rounded-lg bg-[#0f172a] border border-gray-700"></textarea>
+
+  <button type="submit"
+    class="w-full mt-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500">
+    Send Message
+  </button>
+
+</form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     </main>
 
-    <footer class="border-t border-white/10 px-6 py-10 text-center text-slate-400">
+    <footer id="contact" class="border-t border-white/10 px-6 py-10 text-center text-slate-400 lg:px-8">
       <p>Ready to launch your next website? Let's build something premium.</p>
-      <a href="mailto:mujtaba.ibn.mazroof@gmail.com" class="mt-2 inline-block text-cyan-300">mujtaba.ibn.mazroof@gmail.com</a>
+      <a href="mailto:mujtaba.ibn.mazroof@gmail.com" class="mt-2 inline-block text-cyan-300 hover:text-cyan-200">
+        mujtaba.ibn.mazroof@gmail.com
+      </a>
     </footer>
 
-    <div id="toast" class="fixed right-6 top-6 z-[9999] translate-x-[120%] rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-4 text-white shadow-lg transition-transform duration-500">Message sent successfully 🚀</div>
-
     <script src="script.js"></script>
+    <!-- Toast Notification -->
+<div id="toast"
+     class="fixed top-6 right-6 bg-gradient-to-r from-cyan-500 to-blue-500 
+            text-white px-6 py-4 rounded-xl shadow-lg 
+            transform translate-x-[120%] transition-transform duration-500 
+            z-[9999]">
+  Message sent successfully 🚀
+</div>
   </body>
 </html>
