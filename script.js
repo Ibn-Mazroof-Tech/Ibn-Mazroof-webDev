@@ -209,18 +209,19 @@ if (form) {
       message: formData.get('message')
     };
 
-    try {
-  await fetch('https://script.google.com/macros/s/AKfycby_-8cWdmpiL9JHHnPkhK-0HJzxtEIa-BFef5Rza8XinsRAigI6FzjPNXsONgTHX6ob/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
+   try {
+  await fetch(url, {
+    method: "POST",
+    mode: "no-cors",
     body: JSON.stringify(payload)
   });
 
   showToast("Message sent successfully 🚀", true);
   contactForm.reset();
+
 } catch (error) {
   showToast("Something went wrong ❌", false);
 }
+
 
 
