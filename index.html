@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mujtaba | Developer Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ['Inter', 'sans-serif']
+            },
+            colors: {
+              slateDeep: '#0f172a'
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(56, 189, 248, 0.35), 0 0 30px rgba(99, 102, 241, 0.2)'
+            }
+          }
+        }
+      };
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-inter bg-slateDeep text-white antialiased selection:bg-cyan-400/20 selection:text-cyan-200">
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
+        <a href="#hero" class="text-lg font-semibold tracking-wide text-white">Mujtaba.dev</a>
+        <ul class="flex items-center gap-6 text-sm text-slate-300">
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="hero"
+        class="hero-bg relative isolate min-h-screen overflow-hidden px-6 pb-16 pt-28 lg:px-8 lg:pt-32"
+      >
+        <div id="cursor-glow" class="pointer-events-none absolute -z-10 h-72 w-72 rounded-full opacity-0 blur-3xl"></div>
+
+        <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1fr,1.2fr]">
+          <div class="reveal hero-parallax-image flex justify-center lg:justify-start" data-parallax="0.08">
+            <div class="profile-glow rounded-full p-1">
+              <img
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=800&q=80"
+                alt="Portrait of Mujtaba"
+                class="h-48 w-48 rounded-full object-cover sm:h-56 sm:w-56 lg:h-64 lg:w-64"
+              />
+            </div>
+          </div>
+
+          <div class="reveal hero-parallax-text text-center lg:text-left" data-parallax="0.13">
+            <p class="mb-4 text-sm uppercase tracking-[0.2em] text-cyan-300">Freelance Web Developer</p>
+            <h1 class="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Hi, I'm Mujtaba</h1>
+
+            <div class="mt-5 h-8 text-lg text-slate-200 sm:text-xl" aria-live="polite">
+              <span id="typed-text"></span><span class="typing-cursor">|</span>
+            </div>
+
+            <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 lg:mx-0">
+              I craft high-performing, conversion-focused websites for modern businesses that want premium
+              digital presence and measurable growth.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+              <a href="#projects" class="cta-btn cta-primary w-full sm:w-auto">View My Work</a>
+              <a href="#contact" class="cta-btn cta-secondary w-full sm:w-auto">Hire Me</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="reveal mx-auto max-w-6xl px-6 py-20 lg:px-8">
+        <div class="mb-12">
+          <p class="text-sm uppercase tracking-[0.18em] text-cyan-300">Services</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">What I Build</h2>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M4 5h16v14H4z" />
+                <path d="M4 9h16" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Business Websites</h3>
+            <p class="mt-2 text-slate-400">Professional websites that build trust and convert visitors into customers.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M12 3v18" />
+                <path d="M3 12h18" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Landing Pages</h3>
+            <p class="mt-2 text-slate-400">Focused, high-speed pages designed to generate leads and drive specific actions.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M4 20l8-8 4 4 4-4" />
+                <path d="M4 4h16v16H4z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Website Redesign</h3>
+            <p class="mt-2 text-slate-400">Transform outdated websites into modern, responsive experiences with premium aesthetics.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" class="h-6 w-6">
+                <path d="M12 6v6l4 2" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Website Maintenance</h3>
+            <p class="mt-2 text-slate-400">Reliable updates, performance monitoring, and security improvements month after month.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal mx-auto max-w-6xl px-6 pb-20 lg:px-8">
+        <div class="mb-12">
+          <p class="text-sm uppercase tracking-[0.18em] text-cyan-300">Projects</p>
+          <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Selected Work</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80"
+              alt="Restaurant website project"
+            />
+            <div class="project-overlay"><span>View Project</span></div>
+          </article>
+
+          <article class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1507208773393-40d9fc670acf?auto=format&fit=crop&w=1200&q=80"
+              alt="Agency landing page project"
+            />
+            <div class="project-overlay"><span>View Project</span></div>
+          </article>
+
+          <article class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+              alt="SaaS redesign project"
+            />
+            <div class="project-overlay"><span>View Project</span></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="border-t border-white/10 px-6 py-10 text-center text-slate-400 lg:px-8">
+      <p>Ready to launch your next website? Let's build something premium.</p>
+      <a href="mailto:hello@mujtaba.dev" class="mt-2 inline-block text-cyan-300 hover:text-cyan-200">
+        hello@mujtaba.dev
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
