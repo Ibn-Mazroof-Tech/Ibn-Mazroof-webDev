@@ -41,12 +41,20 @@ let mouseY = 0;
 let glowX = 0;
 let glowY = 0;
 
-heroSection.addEventListener('mousemove', (event) => {
-  const rect = heroSection.getBoundingClientRect();
-  mouseX = event.clientX - rect.left;
-  mouseY = event.clientY - rect.top;
-  glow.style.opacity = '1';
-});
+if (heroSection && glow) {
+  heroSection.addEventListener('mousemove', (event) => {
+    const rect = heroSection.getBoundingClientRect();
+    mouseX = event.clientX - rect.left;
+    mouseY = event.clientY - rect.top;
+    glow.style.opacity = '1';
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    glow.style.opacity = '0';
+  });
+
+  animateGlow();
+}
 
 heroSection.addEventListener('mouseleave', () => {
   glow.style.opacity = '0';
@@ -139,17 +147,19 @@ const mobileMenu = document.getElementById("mobile-menu");
 const navbar = document.getElementById("navbar");
 
 // Toggle Menu
-menuBtn.addEventListener("click", () => {
-  menuBtn.classList.toggle("open");
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("open");
 
-  if (mobileMenu.classList.contains("max-h-0")) {
-    mobileMenu.classList.remove("max-h-0");
-    mobileMenu.classList.add("max-h-96");
-  } else {
-    mobileMenu.classList.add("max-h-0");
-    mobileMenu.classList.remove("max-h-96");
-  }
-});
+    if (mobileMenu.classList.contains("max-h-0")) {
+      mobileMenu.classList.remove("max-h-0");
+      mobileMenu.classList.add("max-h-96");
+    } else {
+      mobileMenu.classList.add("max-h-0");
+      mobileMenu.classList.remove("max-h-96");
+    }
+  });
+}
 
 // Auto close after click
 document.querySelectorAll("#mobile-menu a").forEach(link => {
@@ -171,41 +181,62 @@ window.addEventListener("scroll", () => {
 
 // contact me section last wala 
 document.addEventListener("DOMContentLoaded", function () {
-
   const flipBtn = document.getElementById("flip-btn");
   const contactCard = document.getElementById("contact-card");
 
-  flipBtn.addEventListener("click", function () {
-    contactCard.classList.toggle("flipped");
-  });
-
+  if (flipBtn && contactCard) {
+    flipBtn.addEventListener("click", function () {
+      contactCard.classList.toggle("flipped");
+    });
+  }
 });
 
 // google sheets form integration 
 const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message")
-  };
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message")
+    };
 
-  fetch("https://script.google.com/macros/s/AKfycbzoceW_yJNt_lAx8Mv1ydYYxmZeHW2uh847YyN0r4TFrbZDcIrSAN5ZspV28js7ebWx/exec", {
-    method: "POST",
-    body: JSON.stringify(data),
-  })
-  .then(response => response.text())
-  .then(() => {
-    alert("Message sent successfully!");
-    form.reset();
-  })
-  .catch(error => {
-    alert("Something went wrong.");
-    console.error(error);
+    fetch("https://script.google.com/macros/s/AKfycbwEW9vGdd5FokZBCZ5Qs-aSQRkANcjU12_NzvVZ2eFs69sgSgrYb8CvkWeBf9geGZQo/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(() => {
+      showToast("Message sent successfully 🚀");
+      form.reset();
+    })
+    .catch(error => {
+      showToast("Something went wrong ❌");
+      console.error(error);
+    });
   });
-});
+}
+
+// toast message of contact form submitted 
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+
+  // Slide in
+  toast.classList.remove("translate-x-[120%]");
+  toast.classList.add("translate-x-0");
+
+  // Auto hide after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove("translate-x-0");
+    toast.classList.add("translate-x-[120%]");
+  }, 3000);
+}
