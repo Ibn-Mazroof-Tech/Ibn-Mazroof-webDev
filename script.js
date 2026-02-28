@@ -210,7 +210,7 @@ if (form) {
     };
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwEW9vGdd5FokZBCZ5Qs-aSQRkANcjU12_NzvVZ2eFs69sgSgrYb8CvkWeBf9geGZQo/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycby_-8cWdmpiL9JHHnPkhK-0HJzxtEIa-BFef5Rza8XinsRAigI6FzjPNXsONgTHX6ob/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -224,3 +224,4 @@ if (form) {
     }
   });
 }
+
